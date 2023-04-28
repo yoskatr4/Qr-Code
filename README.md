@@ -1,6 +1,8 @@
 # Qr-Code
 HTLM ile Qr kod oluşturucu
 Tamamen türkçedir indirin ve projenizde kullanın
+
+
 ![image](https://user-images.githubusercontent.com/124431035/235235497-b5c0bfdd-77d3-4935-99ce-6dac6d77cab5.png)
 
 # 🌐 Sosyal Medya:
