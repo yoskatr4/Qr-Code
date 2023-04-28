@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QR Kod Oluşturucu</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: transparent;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 20px;
+      }
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      button[type="button"] {
+        display: block;
+        margin: 20px auto 0;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #qrcode {
+        display: block;
+        margin: 20px auto;
+        max-width: 256px;
+        max-height: 256px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>QR Kod Oluşturucu</h1>
+    <form>
+      <label for="url">URL:</label>
+      <input type="text" id="url" name="url"><br><br>
+      <button type="button" onclick="generateQR()">QR Kod Oluştur</button>
+    </form>
+    <br>
+    <div id="qrcode"></div>
+    
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script>
+      function generateQR() {
+        var url = document.getElementById("url").value;
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+          text: url,
+          width: 256,
+          height: 256,
+          colorDark : "#000000",
+          colorLight : "#ffffff",
+          correctLevel : QRCode.CorrectLevel.H
+        });
+      }
+    </script>
+  </body>
+</html>
